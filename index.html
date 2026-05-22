@@ -4,17 +4,17 @@
     <title>我的个人网页</title>
     <meta charset="UTF-8">
     <style>
-        /* 让三张图片并排显示 */
+        /* 使用Flexbox布局，图片并排显示 */
         .image-container {
             display: flex;
-            justify-content: space-between;
-            gap: 20px;
-            max-width: 1000px;
+            justify-content: space-between;  /* 图片均匀分布 */
+            gap: 15px;                       /* 图片间距 */
+            max-width: 1200px;
             margin: 20px auto;
-            flex-wrap: nowrap;
+            flex-wrap: nowrap;               /* 强制不换行 */
         }
         .image-container img {
-            width: 30%;
+            width: 23%;                      /* 每张图片宽度约23%（留出间距） */
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -22,19 +22,35 @@
             transition: transform 0.3s;
         }
         .image-container img:hover {
-            transform: scale(1.05);
+            transform: scale(1.05);          /* 悬停放大效果 */
+        }
+        /* 响应式设计：小屏幕时自动换行 */
+        @media (max-width: 768px) {
+            .image-container {
+                flex-wrap: wrap;             /* 允许换行 */
+            }
+            .image-container img {
+                width: 48%;                  /* 每行显示2张 */
+                margin-bottom: 10px;
+            }
+        }
+        @media (max-width: 480px) {
+            .image-container img {
+                width: 100%;                 /* 手机屏幕每行1张 */
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Hello,姜雯丽</h1>
-    <p>欢迎来到王一搏山东分博的网页</p>
+    <h1>Hello,我叫姜雯丽</h1>
+    <p>欢迎来到我的网页</p>
     
-    <!-- 三张图片并排显示 -->
+    <!-- 四张图片并排显示 -->
     <div class="image-container">
-        <img src="图片1的地址.jpg" alt="一阳指">
-        <img src="图片2的地址.jpg" alt="久等了">
-        <img src="图片3的地址.jpg" alt="干饭时刻">
+        <img src="image/微信图片_20260522203412_37_315.jpg" alt="图片1">
+        <img src="image/微信图片_20260522203538_38_315.jpg" alt="图片2">
+        <img src="image/微信图片_20260522203539_39_315.jpg" alt="图片3">
+        <img src="image/微信图片_20260522203623_40_315.jpg" alt="图片4">
     </div>
 </body>
 </html>
