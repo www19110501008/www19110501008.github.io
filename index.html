@@ -3,9 +3,38 @@
 <head>
     <title>我的个人网页</title>
     <meta charset="UTF-8">
+    <style>
+        /* 让三张图片并排显示 */
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            flex-wrap: nowrap;
+        }
+        .image-container img {
+            width: 30%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .image-container img:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 <body>
     <h1>Hello,姜雯丽</h1>
     <p>欢迎来到王一搏山东分博的网页</p>
+    
+    <!-- 三张图片并排显示 -->
+    <div class="image-container">
+        <img src="图片1的地址.jpg" alt="一阳指">
+        <img src="图片2的地址.jpg" alt="久等了">
+        <img src="图片3的地址.jpg" alt="干饭时刻">
+    </div>
 </body>
 </html>
